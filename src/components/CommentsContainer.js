@@ -6,16 +6,16 @@ const commentData=[
     name:'Ashish',
     text: "Lorem espum text e set shin win min fin..",
     replies:[{
-    name:'Ashish',
+    name:'Rose',
     text: "Lorem espum text e set shin win min fin..",
     replies:[{
-        name:'Ashish',
+        name:'Allen',
         text: "Lorem espum text e set shin win min fin..",
         replies:[{
-            name:'Ashish',
+            name:'Harry',
             text: "Lorem espum text e set shin win min fin..",
             replies:[{
-                name:'Ashish',
+                name:'Avinash',
                 text: "Lorem espum text e set shin win min fin..",
                 replies:[{
                     name:'Ashish',
@@ -35,10 +35,10 @@ const commentData=[
     name:'Avanish',
     text: "Lorem espum text e set shin win min fin..",
     replies:[{
-        name:'Ashish',
+        name:'Anju',
         text: "Lorem espum text e set shin win min fin..",
         replies:[{
-            name:'Ashish',
+            name:'Anuj',
             text: "Lorem espum text e set shin win min fin..",
             replies:[],
             }],
@@ -51,7 +51,7 @@ const commentData=[
         name:'Ashish',
         text: "Lorem espum text e set shin win min fin..",
         replies:[{
-            name:'Ashish',
+            name:'Anuj',
             text: "Lorem espum text e set shin win min fin..",
             replies:[],
             }],
@@ -64,7 +64,7 @@ const commentData=[
         name:'Ashish',
         text: "Lorem espum text e set shin win min fin..",
         replies:[{
-            name:'Ashish',
+            name:'Rohit',
             text: "Lorem espum text e set shin win min fin..",
             replies:[],
             }],
@@ -74,16 +74,16 @@ const commentData=[
     name:'Sonu',
     text: "Lorem espum text e set shin win min fin..",
     replies:[{
-        name:'Ashish',
+        name:'Aksah',
         text: "Lorem espum text e set shin win min fin..",
         replies:[{
-            name:'Ashish',
+            name:'Imran',
             text: "Lorem espum text e set shin win min fin..",
             replies:[{
-                name:'Ashish',
+                name:'Jolly',
                 text: "Lorem espum text e set shin win min fin..",
                 replies:[{
-                    name:'Ashish',
+                    name:'Anna',
                     text: "Lorem espum text e set shin win min fin..",
                     replies:[{
                         name:'Ashish',
@@ -110,11 +110,13 @@ const commentData=[
 const Comment=( {data} )=>{
     const {name,text, replies}=data
 return(
-    <div className='flex shadow-sm bg-gray-100 p-2 rounded-lg my-2'>
-        <img className='w-8 h-8'  alt='user' src='https://cdn-icons-png.flaticon.com/512/149/149071.png'/>
+    <div className='flex items-center'>
+        <div className='m-3'>
+        <img className='w-8 h-8 rounded-full'  alt='user' src='https://cdn-icons-png.flaticon.com/512/149/149071.png'/>
+        </div>
         <div className='px-3'>
-            <p className='font-bold'>{name}</p>
-            <p>{text}</p>
+            <p className='font-semibold text-xs'>{name}</p>
+            <p className='text-sm'>{text}</p>
         </div>
     </div>
 )
@@ -134,8 +136,8 @@ const CommentsList=({comments})=>{
 const CommentsContainer = () => {
 
   return (
-    <div className='m-5 p-2'>
-      <h1 className='font-bold text-2xl'>Comments : </h1>
+    <div>
+      <h1 className='font-medium mb-2 text-lg'>Comments : </h1>
       <CommentsList comments={commentData} />
     </div>
   )

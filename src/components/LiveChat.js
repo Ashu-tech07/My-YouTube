@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ChatMessage from "./ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
-import { addChat } from "../utils/chatSlice";
+import { addChat } from "../redux/chatSlice";
 import { generateRandomName, makeRandomMessage } from "../utils/helper";
 import { LIVE_CHAT_COUNT } from "../utils/constants";
 
 const LiveChat = () => {
   const [liveMessage, setLiveMessage] = useState("");
+  const [isShowChat, setIsShowChat] = useState(true);
   const dispatch = useDispatch();
 
   const chatMessage = useSelector((store) => store.chat.messages);
@@ -16,38 +17,78 @@ const LiveChat = () => {
       dispatch(
         addChat({
           name: generateRandomName(),
-          messages: makeRandomMessage(LIVE_CHAT_COUNT) + " 💚💥",
+          messages: makeRandomMessage(LIVE_CHAT_COUNT) + " 💚 💥 💯",
         })
       );
-    }, 2000);
+    }, 800);
 
     return () => clearInterval(i);
   }, []);
+
+  const handleChatSubmit = (e) => {
+    e.preventDefault();
+    dispatch(
+      addChat({
+        name: "Ashish",
+        messages: liveMessage,
+      })
+    );
+    setLiveMessage("");
+  };
+
   return (
     <>
-      <div className="w-full ml-2 p-2 h-[500px] border border-black bg-slate-100 rounded-lg overflow-y-scroll flex flex-col-reverse">
-        <div>
-          {chatMessage.map((c, index) => (
-            <ChatMessage key={index} name={c.name} message={c.messages} />
-          ))}
+      {!isShowChat ? (
+        <div className=" w-[280px] h-[20px]  mx-3 text-center">
+          <button
+            onClick={() => setIsShowChat(true)}
+            className="rounded-full hover:bg-gray-200 border py-1 w-full text-[14px]"
+          >
+            Show Chat
+          </button>
         </div>
-      </div>
-      <form onSubmit={(e)=> {
-      e.preventDefault();
-      dispatch(addChat({
-      name:'Ashish',
-      messages: liveMessage
-      }))
-      setLiveMessage('');
-      }} className="w-full border border-black ml-2 mt-1 p-2 rounded-lg">
-        <input
-          type="text"
-          className="w-80 border border-gray-400 rounded-md pl-2 py-1"
-          value={liveMessage}
-          onChange={(e) => setLiveMessage(e.target.value)}
-        />
-        <button className="px-4 py-1 mx-2 bg-green-300 rounded-md">Send</button>
-      </form>
+      ) : (
+        <div className="w-[320px] h-[700px] border rounded-lg ">
+          <div className="h-[40px] p-2 m-2">Live Chat</div>
+          <hr className="h-[1px] my-2 border-b-[1px] border-0" />
+          <div className="h-[470px] overflow-y-scroll overflow-hidden  flex flex-col-reverse">
+            {chatMessage.map((c, index) => (
+              <ChatMessage key={index} name={c.name} message={c.messages} />
+            ))}
+          </div>
+          <hr className="h-[1px] my-2 border-b-[1px] border-0" />
+          <form onSubmit={(e) => handleChatSubmit(e)}>
+            <div className="flex px-1 my-2">
+              <img
+                className="h-4 rounded-full"
+                alt="user-icon"
+                src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png"
+              />
+              <div className="font-medium text-[13px] ml-1 text-gray-500">
+                Ashish Yadav
+              </div>
+            </div>
+            <div className="px-3 w-full">
+              
+              <input
+                value={liveMessage}
+                onChange={(e) => setLiveMessage(e.target.value)}
+                maxLength="200"
+                className="border-b-[1px] border-gray-400 h-7 outline-none text-[13px] w-full focus:border-blue-500 focus:border-b-[2px] pb-2"
+                type="text"
+                placeholder="Chat..."
+              />
+              <div className="flex justify-end text-gray-500 text-[13px] mt-2">
+                <span className="mr-3">{liveMessage?.length}/200</span>
+                <button className="border rounded-full px-3">Send</button>
+              </div>
+            </div>
+          </form>
+          <hr className="h-[1px] my-2 border-b-[1px] border-0" />
+          <div className='mx-3 text-center'><button onClick={() => setIsShowChat(false)} className='hover:rounded-full hover:bg-gray-200 py-1 w-full text-[14px]'>Hide Chat</button></div>
+
+        </div>
+      )}
     </>
   );
 };
