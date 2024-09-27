@@ -2,14 +2,14 @@
 
 - This project is created with [Create React App](https://github.com/facebook/create-react-app).
 
-- I have created YouTube clone using `React.js`, `Tailwind CSS`, `Redux Toolkit`, `React-router`, `YouTube APIs`.
-- I have used `Youtube APIs` to fetch live data from the server. 
-- You can go through my code. It's very simple , readable, and understandable  code.
-- You can use it for your learning prooject.
+- I have created a YouTube clone using `React.js`, `Tailwind CSS`, `Redux Toolkit`, `React-router`, and `YouTube APIs`.
+- I have used `YouTube APIs` to fetch live data from the server. 
+- You can go through my code. It's very simple, readable, and understandable  code.
+- You can use it for your learning project.
 
 ## Available Features
 
-In the project directory, you can run see :
+In the project directory, you can see :
 
 ### Routing
 
