@@ -35,7 +35,7 @@ const SearchResultsContainer = () => {
                   <ul className='flex flex-col justify-start ml-5 w-96'>
                     <li className='py-2 text-2xl'> {video?.snippet?.title}</li>
                     <li className='text-gray-500 text-[18px]'>{video?.snippet?.channelTitle}</li>
-                    <li className='text-gray-500 text-[18px]'> 100 views {(Math.abs(new Date(video?.snippet?.publishedAt) - new Date()) / (60 * 60 * 24 * 1000)).toFixed(1)} days ago</li>
+                    <li className='text-gray-500 text-[18px]'> 745 views {(Math.abs(new Date(video?.snippet?.publishedAt) - new Date()) / (60 * 60 * 24 * 1000)).toFixed(1)} days ago</li>
                     <li className='text-gray-500 mt-2 text-[15px]'>{video?.snippet?.description}</li>
                   </ul>
                 </div>
