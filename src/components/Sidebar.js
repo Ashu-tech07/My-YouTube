@@ -40,7 +40,7 @@ const Sidebar = () => {
     if(!isMenuOpen) return null;
 
   return (
-    <div className='text-left w-[280px] p-5 max-h-screen  bg-white  overscroll-contain hover:overflow-y-scroll overflow-hidden fixed top-[64px] z-50'>
+    <div className='text-left w-[270px] p-5 max-h-screen  bg-white  overscroll-contain hover:overflow-y-scroll overflow-hidden fixed top-[64px] z-50'>
         <ul>
         <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to='/'> <img className='inline-block align-bottom mr-3' src={homeIcon} alt="Home" /> Home</NavLink ></li>
         <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to={'/'}> <img className='inline-block align-bottom mr-3' src={shortsIcon} alt="Shorts" /> Shorts</NavLink ></li>

@@ -46,6 +46,7 @@ const WatchPage = () => {
       <div className='flex-grow-6'>
         <div>
           <iframe
+          className="rounded-2xl"
             width="900"
             height="500"
             src={"https://www.youtube.com/embed/" + videoId}
@@ -94,7 +95,7 @@ const WatchPage = () => {
                                 <ul className='flex flex-col justify-start ml-2 w-60'>
                                     <li className='font-medium py-2 text-[14px] line-clamp-2 max-h-[50px] leading-5'>{video?.snippet?.title.slice(0,50)}</li>
                                     <li className='text-gray-500 text-[12px]'>{video?.snippet?.channelTitle}</li>
-                                    <li className='text-gray-500 text-[12px]'>100 views  {(Math.abs(new Date(video?.snippet?.publishedAt) - new Date()) / (60 * 60 * 24 * 1000)).toFixed()} days ago</li>
+                                    <li className='text-gray-500 text-[12px]'>777 views  {(Math.abs(new Date(video?.snippet?.publishedAt) - new Date()) / (60 * 60 * 24 * 1000)).toFixed()} days ago</li>
                                 </ul>
                             </div>
                         </Link>

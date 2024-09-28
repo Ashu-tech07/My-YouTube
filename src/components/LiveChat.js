@@ -48,8 +48,8 @@ const LiveChat = () => {
           </button>
         </div>
       ) : (
-        <div className="w-[320px] h-[700px] border rounded-lg ">
-          <div className="h-[40px] p-2 m-2">Live Chat</div>
+        <div className="w-[320px] h-[680px] border rounded-lg ">
+          <div className="h-[30px] p-2 ml-1">Live Chat</div>
           <hr className="h-[1px] my-2 border-b-[1px] border-0" />
           <div className="h-[470px] overflow-y-scroll overflow-hidden  flex flex-col-reverse">
             {chatMessage.map((c, index) => (
