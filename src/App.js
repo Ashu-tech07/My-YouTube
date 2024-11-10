@@ -8,6 +8,7 @@ import MainContainer from './components/MainContainer';
 import WatchPage from './components/WatchPage';
 import ErrorPage from './components/ErrorPage';
 import SearchResultsContainer from './components/SearchResultsContainer';
+import Footer from './components/Footer';
 
 export const appRouter=createBrowserRouter([{
   path:'/',
@@ -34,6 +35,7 @@ function App() {
     <div className="App">
       <Header />
       <Body />
+      <Footer />
     </div>
    
   );
